@@ -8,8 +8,9 @@ public class Main {
         numbers.addLast(20);
         numbers.addLast(30);
         LinkedList.ListIterator i = numbers.listIterator();
-        while (i.hasNext()) {
-            System.out.println(i.next());
-        }
+        i.add(5);
+        i.next();
+        i.add(15);
+        System.out.println(numbers);
     }
 }
