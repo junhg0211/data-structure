@@ -90,5 +90,13 @@ public class ArrayList {
         public boolean hasNext() {
             return nextIndex < size;
         }
+
+        public Object previous() {
+            return elementData[--nextIndex];
+        }
+
+        public boolean hasPrevious() {
+            return nextIndex > 0;
+        }
     }
 }
