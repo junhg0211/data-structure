@@ -5,6 +5,17 @@ public class LinkedList {
     private Node tail;
     private int size = 0;
 
+    public void addFirst(Object input) {
+        Node newNode = new Node(input);
+        newNode.next = head;
+        head = newNode;
+        size++;
+
+        if (head.next == null) {
+            tail = head;
+        }
+    }
+
     private class Node {
         private Object data;
         private Node next;
