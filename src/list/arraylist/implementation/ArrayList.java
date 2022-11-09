@@ -98,5 +98,13 @@ public class ArrayList {
         public boolean hasPrevious() {
             return nextIndex > 0;
         }
+
+        public boolean add(Object element) {
+            return ArrayList.this.add(nextIndex++, element);
+        }
+
+        public Object remove() {
+            return ArrayList.this.remove(--nextIndex);
+        }
     }
 }
