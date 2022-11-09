@@ -59,6 +59,23 @@ public class LinkedList {
         size++;
     }
 
+    public String toString() {
+        if (head == null) {
+            return "[]";
+        }
+
+        Node temp = head;
+        String str = "[";
+
+        while (temp.next != null) {
+            str += temp.data + ", ";
+            temp = temp.next;
+        }
+        str += temp.data;
+
+        return str + "]";
+    }
+
     private class Node {
         private Object data;
         private Node next;
