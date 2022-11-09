@@ -39,6 +39,26 @@ public class LinkedList {
         return x;
     }
 
+    public void add(int k, Object input) {
+        if (k == 0) {
+            addFirst(input);
+            return;
+        }
+
+        Node temp1 = node(k-1);
+        Node temp2 = temp1.next;
+        Node newNode = new Node(input);
+
+        temp1.next = newNode;
+        newNode.next = temp2;
+
+        if (newNode.next == null) {
+            tail = newNode;
+        }
+
+        size++;
+    }
+
     private class Node {
         private Object data;
         private Node next;
