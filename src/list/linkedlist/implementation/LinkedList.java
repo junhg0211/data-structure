@@ -5,6 +5,20 @@ public class LinkedList {
     private Node tail;
     private int size = 0;
 
+    private class Node {
+        private Object data;
+        private Node next;
+
+        public Node(Object input) {
+            this.data = input;
+            this.next = null;
+        }
+
+        public String toString() {
+            return String.valueOf(this.data);
+        }
+    }
+
     public void addFirst(Object input) {
         Node newNode = new Node(input);
         newNode.next = head;
@@ -132,17 +146,25 @@ public class LinkedList {
         return index;
     }
 
-    private class Node {
-        private Object data;
-        private Node next;
+    public ListIterator listIterator() {
+        return new ListIterator();
+    }
 
-        public Node(Object input) {
-            this.data = input;
-            this.next = null;
+    public class ListIterator {
+        private Node next;
+        private Node lastReturned;
+        private int nextIndex;
+
+        ListIterator() {
+            next = head;
         }
 
-        public String toString() {
-            return String.valueOf(this.data);
+        public Object next() {
+            lastReturned = next;
+            next = next.next;
+            nextIndex++;
+
+            return lastReturned.data;
         }
     }
 }
