@@ -75,4 +75,20 @@ public class ArrayList {
 
         return -1;
     }
+
+    public ListIterator listIterator() {
+        return new ListIterator();
+    }
+
+    class ListIterator {
+        private int nextIndex = 0;
+
+        public Object next() {
+            return elementData[nextIndex++];
+        }
+
+        public boolean hasNext() {
+            return nextIndex < size;
+        }
+    }
 }
