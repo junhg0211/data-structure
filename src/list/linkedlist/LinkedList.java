@@ -1,4 +1,4 @@
-package list.linkedlist.implementation;
+package list.linkedlist;
 
 import java.lang.IllegalStateException;
 
