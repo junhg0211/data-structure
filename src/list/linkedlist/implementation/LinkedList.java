@@ -108,6 +108,14 @@ public class LinkedList {
         return remove(size-1);
     }
 
+    public int size() {
+        return size;
+    }
+
+    public Object get(int k) {
+        return node(k).data;
+    }
+
     private class Node {
         private Object data;
         private Node next;
