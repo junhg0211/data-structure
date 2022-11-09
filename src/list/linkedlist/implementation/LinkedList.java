@@ -16,6 +16,19 @@ public class LinkedList {
         }
     }
 
+    public void addLast(Object input) {
+        if (size == 0) {
+            addFirst(input);
+            return;
+        }
+
+        Node newNode = new Node(input);
+
+        tail.next = newNode;
+        tail = newNode;
+        size++;
+    }
+
     private class Node {
         private Object data;
         private Node next;
