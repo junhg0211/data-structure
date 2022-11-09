@@ -11,7 +11,10 @@ public class Main {
         numbers.addFirst(5);
         System.out.println(numbers);
 
+        // System.out.println(numbers.removeFirst());
         System.out.println(numbers.removeFirst());
+        System.out.println(numbers.remove(1));
+        System.out.println(numbers.removeLast());
         System.out.println(numbers);
     }
 }

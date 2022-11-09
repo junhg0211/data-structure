@@ -85,6 +85,29 @@ public class LinkedList {
         return result;
     }
 
+    public Object remove(int k) {
+        if (k == 0) {
+            return removeFirst();
+        }
+
+        Node temp = node(k-1);
+        Node todoDeleted = temp.next;
+        temp.next = todoDeleted.next;
+        Object result = todoDeleted.data;
+
+        if (todoDeleted == tail) {
+            tail = temp;
+        }
+        todoDeleted = null;
+
+        size--;
+        return result;
+    }
+
+    public Object removeLast() {
+        return remove(size-1);
+    }
+
     private class Node {
         private Object data;
         private Node next;
